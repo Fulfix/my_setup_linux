@@ -16,7 +16,7 @@ sudo dnf install -y \
   hyprcursor hyprcursor-devel file file-devel \
   hyprlang-devel re2-devel libxkbcommon-devel libuuid-devel tomlplusplus-devel \
   xcb-util-devel libxcb-devel xcb-util-wm-devel xcb-util-keysyms-devel \
-  xcb-util-image-devel xcb-util-renderutil-devel libjxl-devel pixman-devel cairo-devel libjpeg-devel libwebp-devel mesa-libGL-devel hwdata-devel
+  xcb-util-image-devel xcb-util-renderutil-devel libjxl-devel pixman-devel cairo-devel libjpeg-devel libwebp-devel mesa-libGL-devel hwdata-devel pango-devel xcb-util-errors-devel
 
 # Installer libjxl depuis le dépôt GitHub
 git clone https://github.com/libjxl/libjxl
