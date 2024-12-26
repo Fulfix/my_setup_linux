@@ -9,7 +9,7 @@ sudo dnf install -y \
   libseat-devel libinput-devel mesa-libgbm-devel systemd-devel \
   libudev-devel libX11-devel hwdata \
   hyprutils-devel libdisplay-info-devel pugixml pugixml-devel \
-  hyprcursor hyprcursor-devel libmagic file-devel \
+  hyprcursor hyprcursor-devel file file-devel \
   hyprlang-devel re2-devel libxkbcommon-devel libuuid-devel tomlplusplus-devel \
   xcb-util-devel libxcb-devel xcb-util-wm-devel xcb-util-keysyms-devel \
   xcb-util-image-devel xcb-util-renderutil-devel
