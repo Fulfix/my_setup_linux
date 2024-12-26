@@ -8,6 +8,7 @@ fi
 
 # Charger la police de console (facultatif pour tester immédiatement)
 setfont /usr/lib/kbd/consolefonts/solar24x32.psfu.gz
+loadkeys mac-fr
 
 # Modifier le fichier /etc/vconsole.conf
 cat <<EOF > /etc/vconsole.conf
