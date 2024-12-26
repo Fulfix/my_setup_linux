@@ -6,7 +6,7 @@ source ~/.bashrc
 
 # Installer les dépendances nécessaires
 sudo dnf install -y \
-  gcc gcc-c++ cmake meson ninja-build \
+  gcc gcc-c++ sudo cmake meson ninja-build \
   wayland-devel wayland-protocols-devel \
   libX11-devel libXrandr-devel libXinerama-devel libXcursor-devel \
   vulkan-loader-devel \
@@ -25,7 +25,7 @@ chmod +x deps.sh
 sudo ./deps.sh
 mkdir build
 cd build
-cmake ..
+sudo cmake ..
 make -j$(nproc)
 sudo make install
 
@@ -33,40 +33,41 @@ sudo make install
 cd ../
 git clone https://github.com/hyprwm/hyprgraphics
 cd hyprgraphics
-cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -S . -B ./build
-cmake --build ./build --config Release --target all -j$(nproc)
-sudo cmake --install ./build
+sudo cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -S . -B ./build
+sudo cmake --build ./build --config Release --target all -j$(nproc)
+sudo sudo cmake --install ./build
 
 # Installer hyprutils depuis le dépôt GitHub
 cd ..
 git clone https://github.com/hyprwm/hyprutils.git
 cd hyprutils
-cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -S . -B ./build
-cmake --build ./build --config Release --target all -j$(nproc)
-sudo cmake --install ./build
+sudo cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -S . -B ./build
+sudo cmake --build ./build --config Release --target all -j$(nproc)
+sudo sudo cmake --install ./build
 
 # Installer hyprwayland-scanner depuis le dépôt GitHub
 cd ..
 git clone https://github.com/hyprwm/hyprwayland-scanner
 cd hyprwayland-scanner
-cmake -DCMAKE_INSTALL_PREFIX=/usr -B build
-cmake --build build -j$(nproc)
-sudo cmake --install build
+sudo cmake -DCMAKE_INSTALL_PREFIX=/usr -B build
+sudo cmake --build build -j$(nproc)
+sudo sudo cmake --install build
 
 # Installer aquamarine depuis le dépôt GitHub
 cd ..
 git clone https://github.com/hyprwm/aquamarine
 cd aquamarine
-cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -S . -B ./build
-cmake --build ./build --config Release --target all -j$(nproc)
-sudo cmake --install ./build
+sudo cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -S . -B ./build
+sudo cmake --build ./build --config Release --target all -j$(nproc)
+sudo sudo cmake --install ./build
 
 # Installer Hyprland depuis le dépôt GitHub
 cd ..
 git clone --recursive https://github.com/hyprwm/Hyprland
 cd Hyprland
-meson _build
-ninja -C _build
+sudo meson _build
+sudo ninja -C _build
+sudo ninja -c _build install
 sudo ninja -C _build install
 
 echo "Hyprland et toutes les dépendances ont été installées avec succès !"
