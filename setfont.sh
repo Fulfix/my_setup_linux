@@ -7,7 +7,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Charger la police de console (facultatif pour tester immédiatement)
-setfont /usr/share/kbd/consolefonts/solar24x32.psfu.gz
+setfont /usr/lib/kbd/consolefonts/solar24x32.psfu.gz
 
 # Modifier le fichier /etc/vconsole.conf
 cat <<EOF > /etc/vconsole.conf
